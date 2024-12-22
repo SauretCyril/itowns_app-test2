@@ -25,7 +25,8 @@ function init() {
   // Add your layers and other initialization code here
   console.log('Vue initialisée', view);
   // Setup loading screen and debug menu
-  //setupLoadingScreen(viewerDiv, view);
+  setupLoadingScreen(viewerDiv,view );
+  const debugMenu = new GuiTools('menuDiv', view);
   //const debugMenu = new GuiTools('menuDiv', view);
 
   // Add your layers and other initialization code here
@@ -34,9 +35,10 @@ function init() {
                 config.source = new itowns.WMTSSource(config.source);
                 view.addLayer(
                     new itowns.ColorLayer(config.id, config),
-                );
+                ).then(debugMenu.addLayerGUI.bind(debugMenu));
             });
 
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
