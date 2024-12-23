@@ -20,4 +20,30 @@ declare module 'itowns' {
     export namespace Fetcher {
       function json(url: string): Promise<any>;
     }
+    export namespace OWSLandCover {
+      function get(crs: string, extent: [number, number, number, number]): Promise<any>;
+    }
+    export class ElevationLayer {
+      constructor(id: string, config: any);
+    }
+    export namespace OWSLandUse {
+      function get(crs: string, extent: [number, number, number, number]): Promise<any>;
+    }
+    export namespace OWSLandCoverType {
+      function get(crs: string, extent: [number, number, number, number]): Promise<any>;
+    }
+    export namespace OWSLandUseType {
+      function get(crs: string, extent: [number, number, number, number]): Promise<any>;
+    }
+    export namespace OWSLandUseSubtype {
+      function get(crs: string, extent: [number, number, number, number]): Promise<any>;
+    }
+    export namespace OWSLandCoverSubtype {
+      function get(crs: string, extent: [number, number, number, number]): Promise<any>;
+    }
+    export namespace OWSLandUseSubtypeGroup {
+      function get(crs: string, extent: [number, number, number, number]): Promise<any>;
+    }
+    
+    
   }
