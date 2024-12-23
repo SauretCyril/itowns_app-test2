@@ -2,8 +2,8 @@
 import React, { useEffect } from 'react';
 import * as itowns from 'itowns';
 import { setupLoadingScreen } from './js/GUI/LoadingScreen';
-//import Searchbar from 'itowns/lib/utils/gui/Searchbar.js';
-//import 'itowns_widgets/Searchbar.css';
+import Searchbar from 'itowns/lib/utils/gui/Searchbar.js';
+//import './itowns_widgets/Searchbar.css';
 interface Config {
   id: string;
   source: itowns.WMTSSource;
@@ -16,10 +16,10 @@ const App: React.FC = () => {
     
     function init(): void 
     {
-      /* function lookAtCoordinate(coordinates: itowns.Coordinates) {
+       function lookAtCoordinate(coordinates: itowns.Coordinates) {
         // const view = (window as any).view as itowns.View;
         view.controls.lookAtCoordinate({ coord: coordinates, range: 20000, tilt: 45, heading: 0 });
-      } */
+      } 
      
       const viewerDiv = document.getElementById('viewerDiv') as HTMLDivElement;
       const view = new itowns.GlobeView(viewerDiv, {
@@ -61,7 +61,7 @@ const App: React.FC = () => {
         //----------------------------------------------------------------
         // Searchbar
         //----------------------------------------------------------------
-       /*  const geocodingOptions = {
+         const geocodingOptions = {
           url: new URL(
             'https://data.geopf.fr/geocodage/completion?' +
             'text=&type=StreetAddress,PositionOfInterest',
@@ -81,7 +81,7 @@ const App: React.FC = () => {
           placeholder: 'Search a location in France (Cyr)',
         });
 
-        viewerDiv.appendChild(searchbar.domElement); */
+        viewerDiv.appendChild(searchbar.domElement); 
 
      
     }
