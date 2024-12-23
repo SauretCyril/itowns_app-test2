@@ -1,7 +1,7 @@
 // filepath: /g:/G_WCS/itowns_app-test2/my-app/src/App.tsx
 import React, { useEffect } from 'react';
 import * as itowns from 'itowns';
-//import { setupLoadingScreen } from./js/GUI/LoadingScreen.jsts';
+import { setupLoadingScreen } from './js/GUI/LoadingScreen';
 const App: React.FC = () => {
   useEffect(() => {
     
@@ -10,11 +10,11 @@ const App: React.FC = () => {
         console.log('Initialisation de la vue');
 
         // Define camera initial position
-      /*   const placement = {
+          const placement = {
           coord: new itowns.Coordinates('EPSG:4326', 2.351323, 48.856712),
           range: 6000,
           tilt: 50,
-        }; */
+        };  
 
         // `viewerDiv` contains iTowns' rendering area (`<canvas>`)
         const viewerDiv = document.getElementById('viewerDiv') as HTMLDivElement;
@@ -24,11 +24,11 @@ const App: React.FC = () => {
             const view = new itowns.GlobeView(viewerDiv, {
               renderer: {
                 antialias: true,
-              },
+              },placement
               });
 
           console.log('Vue initialisée', view);
-          //setupLoadingScreen(viewerDiv ,view);
+          setupLoadingScreen(viewerDiv ,view);
           
         
           itowns.Fetcher.json('layers/JSONLayers/Ortho.json').then((config) => 

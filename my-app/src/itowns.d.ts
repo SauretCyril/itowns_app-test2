@@ -1,14 +1,17 @@
 // filepath: /g:/G_WCS/itowns_app-test2/my-app/src/itowns.d.ts
 declare module 'itowns' {
-    export class Coordinates {
+    
+  export { default as Coordinates } from 'Core/Geographic/Coordinates';
+    /* export class Coordinates {
       constructor(crs: string, longitude: number, latitude: number);
-    }
-  
-    export class GlobeView {
+    } */
+    export { default as GlobeView, GLOBE_VIEW_EVENTS } from 'Core/Prefab/GlobeView';
+   /*  export class GlobeView {
       constructor(viewerDiv: HTMLDivElement, options: { renderer: { antialias: boolean } });
       addLayer(layer: ColorLayer): void;
     }
-  
+   */
+    export { default as View } from 'Core/View';
     export class WMTSSource {
       constructor(source: any);
     }
@@ -44,6 +47,11 @@ declare module 'itowns' {
     export namespace OWSLandUseSubtypeGroup {
       function get(crs: string, extent: [number, number, number, number]): Promise<any>;
     }
-    
-    
+   /*  export class view {
+      constructor(viewerDiv: HTMLDivElement, options: { renderer: { antialias: boolean } });
+      addLayer(layer: ColorLayer): void;
+    }  */
+    export const VIEW_EVENTS: {
+      LAYERS_INITIALIZED: string;
+    };
   }
