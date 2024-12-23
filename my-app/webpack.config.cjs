@@ -30,7 +30,10 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    alias: {
+      'itowns/lib/utils/gui/Searchbar.js': path.resolve(__dirname, 'node_modules/itowns/lib/utils/gui/Searchbar.js'),
+    },
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   plugins: [
     new ESLintPlugin({

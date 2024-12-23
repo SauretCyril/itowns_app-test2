@@ -15,7 +15,7 @@ declare module 'itowns' {
     export class WMTSSource {
       constructor(source: any);
     }
-  
+   
     export class ColorLayer {
       constructor(id: string, config: any);
     }
@@ -51,7 +51,15 @@ declare module 'itowns' {
       constructor(viewerDiv: HTMLDivElement, options: { renderer: { antialias: boolean } });
       addLayer(layer: ColorLayer): void;
     }  */
-    export const VIEW_EVENTS: {
+    
+      export const VIEW_EVENTS: {
       LAYERS_INITIALIZED: string;
     };
+  }
+  declare module 'itowns/lib/utils/gui/Searchbar.js' {
+    import { View } from 'itowns';
+    export default class Searchbar {
+      constructor(view: View, options: any, config: any);
+      domElement: HTMLElement;
+    }
   }
